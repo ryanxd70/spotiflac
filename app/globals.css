@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --brand: #22c55e;
+  --brand-dim: rgba(34, 197, 94, 0.12);
+  --bg: #050a06;
+  --surface: #0a1a0c;
+  --border: rgba(34, 197, 94, 0.15);
+  --text: #e8f5ea;
+  --muted: #6b8f70;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display), serif;
+  line-height: 1.2;
+}
+
+::selection { background: rgba(34,197,94,0.3); color: #fff; }
+
+.glass {
+  background: rgba(10, 26, 12, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+}
+
+.glow-text { text-shadow: 0 0 40px rgba(34,197,94,0.4); }
+
+.gradient-mesh {
+  background: 
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(34,197,94,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 90%, rgba(21,128,61,0.06) 0%, transparent 60%),
+    var(--bg);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(34,197,94,0.3); }
+  50% { box-shadow: 0 0 60px rgba(34,197,94,0.6); }
+}
+
+.animate-fade-up { animation: fadeUp 0.6s ease-out both; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #22c55e;
+  margin-bottom: 1rem;
+  display: block;
+  font-family: var(--font-body), sans-serif;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
