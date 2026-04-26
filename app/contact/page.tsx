@@ -2,12 +2,13 @@ import type { Metadata } from 'next'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact — SpotiFLAC Mobile',
-  description: 'Get in touch with the SpotiFLAC team. Report bugs, suggest features, or ask questions about SpotiFLAC Mobile APK.',
+  title: 'Contact SpotiFLAC Mobile — Bug Reports & Support',
+  description: 'Get in touch with the SpotiFLAC team. Report bugs, suggest features, or ask questions about SpotiFLAC Mobile APK for Android and iOS.',
   alternates: { canonical: 'https://spotiflac.app/contact' },
   openGraph: {
     url: 'https://spotiflac.app/contact',
-    title: 'Contact SpotiFLAC Mobile',
+    title: 'Contact SpotiFLAC Mobile — Bug Reports & Support',
+    description: 'Get in touch with the SpotiFLAC team. Report bugs, suggest features, or ask questions about SpotiFLAC Mobile APK.',
   },
 }
 

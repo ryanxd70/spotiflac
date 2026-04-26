@@ -3,14 +3,25 @@ import Link from 'next/link'
 import FAQ from '@/components/FAQ'
 
 export const metadata: Metadata = {
-  title: 'SpotiFLAC Mobile APK — Free Lossless Music Downloader for Android & iOS',
-  description: 'Download SpotiFLAC Mobile APK v4.3.1 and save music in lossless FLAC quality on Android 7.0+ and iOS 14+. Free, open-source, no account required.',
+  // absolute: true bypasses the layout template so this exact string appears in <title>
+  // and in Google SERPs — matches the requested SERP title precisely
+  title: {
+    absolute: 'SpotiFLAC Mobile APK v4.3.1 – Lossless Music Downloader (24-bit Audio)',
+  },
+  description: 'Download SpotiFLAC Mobile APK v4.3.1 for high-fidelity 24-bit FLAC audio. The ultimate lossless music downloader and player for mobile devices.',
   alternates: { canonical: 'https://spotiflac.app' },
   openGraph: {
     url: 'https://spotiflac.app',
-    title: 'SpotiFLAC Mobile APK — Free Lossless Music Downloader',
-    description: 'Download SpotiFLAC Mobile APK v4.3.1. Save music in FLAC, MP3, AAC. Free and open-source. Android 7.0+ & iOS 14+.',
+    // OG title kept human/social — slightly more readable for shares
+    title: 'SpotiFLAC Mobile APK — Free Lossless Music Downloader (24-bit FLAC)',
+    description: 'Download SpotiFLAC Mobile APK v4.3.1 for high-fidelity 24-bit FLAC audio. Free, open-source, no account required. Android 7.0+ & iOS 14+.',
     images: [{ url: 'https://spotiflac.app/og-image.png', width: 1200, height: 630, alt: 'SpotiFLAC Mobile APK' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SpotiFLAC Mobile APK v4.3.1 – Lossless Music Downloader (24-bit Audio)',
+    description: 'Download SpotiFLAC Mobile APK v4.3.1 for high-fidelity 24-bit FLAC audio. Free, open-source, Android & iOS.',
+    images: ['https://spotiflac.app/og-image.png'],
   },
 }
 
@@ -108,7 +119,8 @@ const schemaApp = {
   applicationSubCategory: 'Music Downloader',
   softwareVersion: '4.3.1',
   datePublished: '2024-12-01',
-  description: 'Free lossless music downloader for Android and iOS. Saves tracks in FLAC, MP3, and AAC with embedded metadata. No account required.',
+  description: 'Free lossless music downloader for Android and iOS. Downloads 24-bit FLAC audio with embedded metadata. No account required.',
+  featureList: 'Lossless FLAC download, 24-bit audio support, MP3 320kbps, AAC 256kbps, batch playlist download, automatic metadata tagging, offline playback, no account required',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.7', reviewCount: '1243', bestRating: '5', worstRating: '1' },
   author: { '@type': 'Organization', name: 'SpotiFLAC', url: 'https://spotiflac.app' },
@@ -263,11 +275,11 @@ export default function HomePage() {
             Clean interface. Real results.
           </h2>
           <p className="text-center text-[var(--muted)] mb-14 max-w-xl mx-auto leading-relaxed">
-            No ads, no clutter. Paste a link on the Home screen and find your downloads organized in the Library — tagged, bit-depth labeled, ready to play.
+            Full control over quality, appearance, and storage — then find your downloads organized in the Library, tagged and bit-depth labeled, ready to play.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Home screen */}
+            {/* Settings screen */}
             <div className="flex flex-col items-center gap-5">
               <div className="relative group">
                 {/* Phone frame */}
@@ -275,8 +287,8 @@ export default function HomePage() {
                 <div className="relative bg-[#111] rounded-[2.8rem] p-2 shadow-2xl shadow-black/60 ring-1 ring-white/5">
                   <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-1.5 rounded-full bg-[#222]" aria-hidden="true" />
                   <img
-                    src="/screenshot-home.jpg"
-                    alt="SpotiFLAC Mobile home screen showing the search bar to paste a Spotify URL and trending songs"
+                    src="/screenshot-settings.jpg"
+                    alt="SpotiFLAC Settings screen with options for appearance, download quality, local library, storage, and extensions"
                     width={320}
                     height={693}
                     className="rounded-[2.4rem] w-64 md:w-72 lg:w-80 h-auto"
@@ -286,8 +298,8 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="text-center">
-                <h3 className="font-bold text-[var(--text)] mb-1.5" style={{fontFamily:'var(--font-display)'}}>Home — Paste & Go</h3>
-                <p className="text-sm text-[var(--muted)] max-w-[240px] mx-auto leading-relaxed">Paste any Spotify URL or search directly. Trending songs and popular artists load automatically.</p>
+                <h3 className="font-bold text-[var(--text)] mb-1.5" style={{fontFamily:'var(--font-display)'}}>Settings — Full Control</h3>
+                <p className="text-sm text-[var(--muted)] max-w-[240px] mx-auto leading-relaxed">Adjust appearance, download quality, filename format, local library scanning, storage paths, and extension management.</p>
               </div>
             </div>
 
@@ -430,12 +442,35 @@ export default function HomePage() {
             Extensible. Configurable. Yours.
           </h2>
           <p className="text-center text-[var(--muted)] mb-14 max-w-xl mx-auto leading-relaxed">
-            The Extension Store lets you add new download sources like YouTube Music. Settings give you full control over quality, storage, appearance, and more — without overwhelming you.
+            The Extension Store lets you add new download sources like YouTube Music. Paste any link on the Home screen and download starts in seconds — no setup needed.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Extension Store */}
+            {/* Library screen */}
             <div className="flex flex-col items-center gap-5 md:order-2">
+              <div className="relative group">
+                <div className="absolute -inset-3 rounded-[3rem] bg-gradient-to-b from-green-500/20 to-green-500/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative bg-[#111] rounded-[2.8rem] p-2 shadow-2xl shadow-black/60 ring-1 ring-white/5">
+                  <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-1.5 rounded-full bg-[#222]" aria-hidden="true" />
+                  <img
+                    src="/screenshot-home.jpg"
+                    alt="SpotiFLAC Mobile home screen showing the search bar to paste a Spotify URL and trending songs"
+                    width={320}
+                    height={693}
+                    className="rounded-[2.4rem] w-64 md:w-72 lg:w-80 h-auto"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <div className="text-center">
+                <h3 className="font-bold text-[var(--text)] mb-1.5" style={{fontFamily:'var(--font-display)'}}>Home — Paste & Go</h3>
+                <p className="text-sm text-[var(--muted)] max-w-[240px] mx-auto leading-relaxed">Paste any Spotify URL or search directly. Trending songs and popular artists load automatically.</p>
+              </div>
+            </div>
+
+            {/* Extension Store */}
+            <div className="flex flex-col items-center gap-5 md:order-1">
               <div className="relative group">
                 <div className="absolute -inset-3 rounded-[3rem] bg-gradient-to-b from-green-500/20 to-green-500/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative bg-[#111] rounded-[2.8rem] p-2 shadow-2xl shadow-black/60 ring-1 ring-white/5">
@@ -454,29 +489,6 @@ export default function HomePage() {
               <div className="text-center">
                 <h3 className="font-bold text-[var(--text)] mb-1.5" style={{fontFamily:'var(--font-display)'}}>Extension Store — Add Sources</h3>
                 <p className="text-sm text-[var(--muted)] max-w-[240px] mx-auto leading-relaxed">Install provider extensions like Spotify Web or YouTube Music to expand where SpotiFLAC can pull audio from.</p>
-              </div>
-            </div>
-
-            {/* Settings */}
-            <div className="flex flex-col items-center gap-5 md:order-1">
-              <div className="relative group">
-                <div className="absolute -inset-3 rounded-[3rem] bg-gradient-to-b from-green-500/20 to-green-500/5 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative bg-[#111] rounded-[2.8rem] p-2 shadow-2xl shadow-black/60 ring-1 ring-white/5">
-                  <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-1.5 rounded-full bg-[#222]" aria-hidden="true" />
-                  <img
-                    src="/screenshot-settings.jpg"
-                    alt="SpotiFLAC Settings screen with options for appearance, download quality, local library, storage, and extensions"
-                    width={320}
-                    height={693}
-                    className="rounded-[2.4rem] w-64 md:w-72 lg:w-80 h-auto"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </div>
-              <div className="text-center">
-                <h3 className="font-bold text-[var(--text)] mb-1.5" style={{fontFamily:'var(--font-display)'}}>Settings — Full Control</h3>
-                <p className="text-sm text-[var(--muted)] max-w-[240px] mx-auto leading-relaxed">Adjust appearance, download quality, filename format, local library scanning, storage paths, and extension management.</p>
               </div>
             </div>
           </div>

@@ -2,14 +2,23 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'About SpotiFLAC Mobile — Open-Source Lossless Music Downloader',
+  title: 'About SpotiFLAC Mobile — Free Open-Source Music Downloader',
   description: 'SpotiFLAC Mobile is a free, open-source lossless music downloader for Android and iOS. Learn about the project, its purpose, and how it is built.',
   alternates: { canonical: 'https://spotiflac.app/about' },
   openGraph: {
     url: 'https://spotiflac.app/about',
-    title: 'About SpotiFLAC Mobile',
-    description: 'Free, open-source lossless music downloader. No subscription, no affiliation with streaming platforms.',
+    title: 'About SpotiFLAC Mobile — Free Open-Source Music Downloader',
+    description: 'Free, open-source lossless music downloader for Android and iOS. No subscription, no affiliation with streaming platforms.',
   },
+}
+
+const schemaBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://spotiflac.app' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://spotiflac.app/about' },
+  ],
 }
 
 const schemaOrg = {
@@ -25,6 +34,7 @@ export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
       <div className="pt-32 pb-24 px-6">
         <div className="max-w-3xl mx-auto">
           <p className="section-label">About</p>

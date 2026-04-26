@@ -2,14 +2,23 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Features — SpotiFLAC Mobile APK',
-  description: 'All SpotiFLAC Mobile features: lossless FLAC downloads, batch playlists, auto metadata tagging, multi-format export, local storage, no account required.',
+  title: 'SpotiFLAC Mobile Features — Lossless FLAC, Batch Downloads & More',
+  description: 'All SpotiFLAC Mobile features: lossless FLAC downloads, batch playlists, auto metadata tagging, multi-format export, local storage. No account required.',
   alternates: { canonical: 'https://spotiflac.app/features' },
   openGraph: {
     url: 'https://spotiflac.app/features',
-    title: 'Features — SpotiFLAC Mobile APK',
-    description: 'Lossless FLAC, batch downloads, auto metadata, multi-format, offline storage. No account required.',
+    title: 'SpotiFLAC Mobile Features — Lossless FLAC, Batch Downloads & More',
+    description: 'Lossless FLAC, batch downloads, auto metadata, multi-format, offline storage. No account required. Free for Android & iOS.',
   },
+}
+
+const schemaBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://spotiflac.app' },
+    { '@type': 'ListItem', position: 2, name: 'Features', item: 'https://spotiflac.app/features' },
+  ],
 }
 
 const features = [
@@ -86,6 +95,7 @@ export default function FeaturesPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFeatures) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
       <div className="pt-32 pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">

@@ -3,14 +3,23 @@ import FAQ from '@/components/FAQ'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'FAQ — SpotiFLAC Mobile APK Questions Answered',
+  title: 'SpotiFLAC Mobile FAQ — APK Install, Quality & Legal Questions',
   description: 'Frequently asked questions about SpotiFLAC Mobile APK. Installation, audio quality, compatibility, legality, iOS sideloading, and troubleshooting.',
   alternates: { canonical: 'https://spotiflac.app/faq' },
   openGraph: {
     url: 'https://spotiflac.app/faq',
-    title: 'FAQ — SpotiFLAC Mobile APK',
-    description: 'Installation, audio quality, compatibility, and legal questions answered.',
+    title: 'SpotiFLAC Mobile FAQ — APK Install, Quality & Legal Questions',
+    description: 'Installation, audio quality, compatibility, iOS sideloading and legal questions about SpotiFLAC Mobile APK answered.',
   },
+}
+
+const schemaBreadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://spotiflac.app' },
+    { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://spotiflac.app/faq' },
+  ],
 }
 
 const faqItems = [
@@ -44,6 +53,7 @@ export default function FAQPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQ) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
       <div className="pt-32 pb-24 px-6">
         <div className="max-w-3xl mx-auto">
           <p className="section-label">Help</p>
