@@ -40,20 +40,9 @@ const faqItems = [
   { q: 'What is the difference between the ARM64 and ARM32 APKs?', a: 'ARM64 is the standard build for all modern Android phones (virtually everything made after 2016). ARM32 is for older or lower-end devices that run a 32-bit Android environment. When in doubt, try ARM64 first — Android will warn you if it is incompatible.' },
 ]
 
-const schemaFAQ = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqItems.map(item => ({
-    '@type': 'Question',
-    name: item.q,
-    acceptedAnswer: { '@type': 'Answer', text: item.a },
-  })),
-}
-
 export default function FAQPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQ) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
       <div className="pt-32 pb-24 px-6">
         <div className="max-w-3xl mx-auto">

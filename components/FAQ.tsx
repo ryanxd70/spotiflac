@@ -8,14 +8,13 @@ export default function FAQ({ items }: Props) {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <div className="space-y-2" itemScope itemType="https://schema.org/FAQPage">
+    // No itemScope/itemType here — FAQPage schema is handled via JSON-LD in the page.
+    // Having both JSON-LD + microdata on the same page causes "Duplicate field" in Search Console.
+    <div className="space-y-2">
       {items.map((item, i) => (
         <div
           key={i}
           className="border border-green-500/10 rounded-xl overflow-hidden hover:border-green-500/20 transition-colors"
-          itemScope
-          itemProp="mainEntity"
-          itemType="https://schema.org/Question"
         >
           <button
             onClick={() => setOpen(open === i ? null : i)}
@@ -25,7 +24,6 @@ export default function FAQ({ items }: Props) {
             <span
               className="font-semibold text-[var(--text)] text-sm leading-snug pt-0.5"
               style={{fontFamily:'var(--font-display)'}}
-              itemProp="name"
             >
               {item.q}
             </span>
@@ -39,14 +37,8 @@ export default function FAQ({ items }: Props) {
           </button>
           <div
             className={`overflow-hidden transition-all duration-300 ${open === i ? 'max-h-96' : 'max-h-0'}`}
-            itemScope
-            itemProp="acceptedAnswer"
-            itemType="https://schema.org/Answer"
           >
-            <p
-              className="px-6 pb-5 pt-1 text-sm text-[var(--muted)] leading-relaxed border-t border-green-500/8"
-              itemProp="text"
-            >
+            <p className="px-6 pb-5 pt-1 text-sm text-[var(--muted)] leading-relaxed border-t border-green-500/8">
               {item.a}
             </p>
           </div>

@@ -53,17 +53,18 @@ export const metadata: Metadata = {
     },
   },
   icons: {
+    // PNG first — Google Search picks up 32x32 PNG for SERP favicon display
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
       { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/favicon-32x32.png',
   },
   // Uncomment and add your code once Google Search Console is verified:
   // verification: { google: 'YOUR_VERIFICATION_CODE' },
@@ -78,10 +79,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Preconnect to Google Analytics (add your GA4 script here when ready) */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        {/* Explicit favicon declarations — belt-and-suspenders for all browsers */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        {/* Explicit favicon declarations — belt-and-suspenders for all browsers + Google SERP */}
+        {/* Google uses 32x32 PNG or 48x48 PNG for favicon in search results */}
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+        {/* ICO fallback for IE and older browsers */}
+        <link rel="shortcut icon" href="/favicon.ico" />
+        {/* Apple touch icon for iOS */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
       </head>
       <body className="gradient-mesh min-h-screen">
