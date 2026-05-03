@@ -1,15 +1,17 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import ThemeToggle from '@/components/ThemeToggle'
 
 const links = [
-  { href: '/',            label: 'Home',       section: false },
-  { href: '/#features',  label: 'Features',   section: true  },
+  { href: '/',             label: 'Home',        section: false },
+  { href: '/#features',   label: 'Features',    section: true  },
   { href: '/#how-it-works', label: 'How It Works', section: true },
-  { href: '/#faq',       label: 'FAQ',        section: true  },
-  { href: '/download',   label: 'Download',   section: false },
-  { href: '/about',      label: 'About',      section: false },
+  { href: '/#faq',        label: 'FAQ',         section: true  },
+  { href: '/download',    label: 'Download',    section: false },
+  { href: '/about',       label: 'About',       section: false },
 ]
 
 export default function Navbar() {
@@ -38,15 +40,9 @@ export default function Navbar() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass' : 'bg-transparent'}`}>
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-          <img
-            src="/logo.png"
-            alt="SpotiFLAC Mobile logo"
-            width={32}
-            height={32}
-            className="w-8 h-8 rounded-lg"
-          />
+          <Image src="/logo.png" alt="SpotiFLAC Mobile logo" width={32} height={32} className="w-8 h-8 rounded-lg" />
           <span style={{fontFamily:'var(--font-display)'}} className="font-bold text-lg text-green-400">SpotiFLAC</span>
         </Link>
 
@@ -63,10 +59,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <Link href="/download" className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold bg-green-500 text-black hover:bg-green-400 transition-all duration-200 shadow-lg hover:shadow-green-500/30 flex-shrink-0">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 4h14v-2H5v2z"/></svg>
-          Download APK
-        </Link>
+        <div className="hidden md:flex items-center">
+          <ThemeToggle />
+        </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden text-green-400 p-2" aria-label="Toggle menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -87,9 +82,9 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link href="/download" onClick={() => setOpen(false)} className="block text-sm font-semibold text-green-400 py-2.5 mt-1">
-            Download APK →
-          </Link>
+          <div className="pt-2">
+            <ThemeToggle />
+          </div>
         </div>
       )}
     </header>

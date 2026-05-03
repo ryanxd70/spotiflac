@@ -77,15 +77,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preconnect to Google Fonts to reduce render-blocking latency */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Preconnect to Google Analytics (add your GA4 script here when ready) */}
+        {/* Preconnect to Google Analytics */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        {/* Explicit favicon declarations — belt-and-suspenders for all browsers + Google SERP */}
-        {/* Google uses 32x32 PNG or 48x48 PNG for favicon in search results */}
+        {/* DNS prefetch for GitHub (download links on /download page) */}
+        <link rel="dns-prefetch" href="https://github.com" />
+        {/* Explicit favicon declarations */}
         <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-        {/* ICO fallback for IE and older browsers */}
         <link rel="shortcut icon" href="/favicon.ico" />
-        {/* Apple touch icon for iOS */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
       </head>
       <body className="gradient-mesh min-h-screen">
