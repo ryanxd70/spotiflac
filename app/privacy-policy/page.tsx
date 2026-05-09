@@ -179,7 +179,7 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <div className="flex flex-wrap gap-4 items-center mb-8">
-          <span className="text-sm text-[var(--muted)]">Last updated: <strong className="text-[var(--text)]">December 2024</strong></span>
+          <span className="text-sm text-[var(--muted)]">Last updated: <strong className="text-[var(--text)]">May 2026</strong></span>
           <span className="text-sm text-[var(--muted)]">Applies to: <strong className="text-[var(--text)]">spotiflac.app</strong></span>
         </div>
 

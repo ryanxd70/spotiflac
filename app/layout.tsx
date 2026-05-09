@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     // Inner pages get: "Features | SpotiFLAC Mobile" etc.
     template: '%s | SpotiFLAC Mobile',
   },
-  description: 'Download SpotiFLAC Mobile APK v4.3.1 for high-fidelity 24-bit FLAC audio. The ultimate lossless music downloader and player for Android and iOS. Free, no account needed.',
+  description: 'Download SpotiFLAC Mobile APK v4.5.1 for high-fidelity 24-bit FLAC audio. The ultimate lossless music downloader and player for Android and iOS. Free, no account needed.',
   keywords: [
     'SpotiFLAC Mobile APK',
     'lossless music downloader',
@@ -74,11 +74,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics — GA4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5DW5YRLF7" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-E5DW5YRLF7');`,
+          }}
+        />
         {/* Preconnect to Google Fonts to reduce render-blocking latency */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Preconnect to Google Analytics */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {/* DNS prefetch for GitHub (download links on /download page) */}
         <link rel="dns-prefetch" href="https://github.com" />
         {/* Explicit favicon declarations */}
