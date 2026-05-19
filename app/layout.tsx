@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     // Inner pages get: "Features | SpotiFLAC Mobile" etc.
     template: '%s | SpotiFLAC Mobile',
   },
-  description: 'Download SpotiFLAC Mobile APK v4.5.1 for high-fidelity 24-bit FLAC audio. The ultimate lossless music downloader and player for Android and iOS. Free, no account needed.',
+  description: 'Download SpotiFLAC Mobile APK v4.5.5 for high-fidelity 24-bit FLAC audio. The ultimate lossless music downloader and player for Android and iOS. Free, no account needed.',
   keywords: [
     'SpotiFLAC Mobile APK',
     'lossless music downloader',

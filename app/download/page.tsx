@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Download SpotiFLAC Mobile APK v4.5.1 — Android & iOS',
-  description: 'Download SpotiFLAC Mobile APK v4.5.1 for Android (ARM32 & ARM64) and iOS IPA. Free lossless music downloader. Official release.',
+  title: 'Download SpotiFLAC Mobile APK v4.5.5 — Android & iOS',
+  description: 'Download SpotiFLAC Mobile APK v4.5.5 for Android (ARM32 & ARM64) and iOS IPA. Free lossless music downloader. Official release.',
   robots: { index: false, follow: false },
   alternates: { canonical: 'https://spotiflac.app/download' },
 }
@@ -12,7 +12,7 @@ const releases = [
   {
     label: 'Android ARM64',
     sublabel: 'Recommended — most phones made after 2016',
-    href: 'https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.5.1/SpotiFLAC-v4.5.1-arm64.apk',
+    href: 'https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.5.5/SpotiFLAC-v4.5.5-arm64.apk',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.523 15.341A5.532 5.532 0 0020 10.5C20 7.46 17.54 5 14.5 5a5.52 5.52 0 00-4.999 3.179L17.523 15.34zM6.477 8.66A5.532 5.532 0 004 13.5C4 16.54 6.46 19 9.5 19a5.52 5.52 0 004.999-3.179L6.477 8.66z"/>
@@ -25,7 +25,7 @@ const releases = [
   {
     label: 'Android ARM32',
     sublabel: 'For older or 32-bit Android devices',
-    href: 'https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.5.1/SpotiFLAC-v4.5.1-arm32.apk',
+    href: 'https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.5.5/SpotiFLAC-v4.5.5-arm32.apk',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.523 15.341A5.532 5.532 0 0020 10.5C20 7.46 17.54 5 14.5 5a5.52 5.52 0 00-4.999 3.179L17.523 15.34zM6.477 8.66A5.532 5.532 0 004 13.5C4 16.54 6.46 19 9.5 19a5.52 5.52 0 004.999-3.179L6.477 8.66z"/>
@@ -38,7 +38,7 @@ const releases = [
   {
     label: 'iOS (Unsigned IPA)',
     sublabel: 'Requires AltStore or Sideloadly on a Mac/PC',
-    href: 'https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.5.1/SpotiFLAC-v4.5.1-ios-unsigned.ipa',
+    href: 'https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.5.5/SpotiFLAC-v4.5.5-ios-unsigned.ipa',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -58,7 +58,7 @@ const schemaDownload = {
   downloadUrl: 'https://spotiflac.app/download',
   operatingSystem: 'Android 7.0+, iOS 14+',
   applicationCategory: 'MultimediaApplication',
-  softwareVersion: '4.5.1',
+  softwareVersion: '4.5.5',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   author: { '@type': 'Organization', name: 'SpotiFLAC', url: 'https://spotiflac.app' },
 }
@@ -78,7 +78,7 @@ export default function DownloadPage() {
               Download SpotiFLAC Mobile
             </h1>
             <p className="text-[var(--muted)] text-lg max-w-xl mx-auto leading-relaxed">
-              Official release v4.5.1. Free and open-source. Choose your platform below.
+              Official release v4.5.5. Free and open-source. Choose your platform below.
             </p>
           </div>
 
@@ -86,8 +86,32 @@ export default function DownloadPage() {
           <div className="flex justify-center mb-10">
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-green-500/20 bg-green-500/5">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
-              <span className="text-green-400 text-sm font-semibold">v4.5.1 — Latest Stable · Released May 2026</span>
+              <span className="text-green-400 text-sm font-semibold">v4.5.5 — Latest Stable · Released 18 May 2026</span>
             </div>
+          </div>
+
+          {/* Telegram CTA — immediately after download links */}
+          <div className="mb-6 p-6 rounded-2xl border border-[#229ED9]/30 bg-[#229ED9]/8 flex flex-col sm:flex-row items-center gap-5">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#229ED9] flex items-center justify-center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+            </div>
+            <div className="flex-1 text-center sm:text-left">
+              <p className="font-bold text-[var(--text)] mb-1" style={{fontFamily:'var(--font-display)'}}>Get updates on Telegram</p>
+              <p className="text-sm text-[var(--muted)] leading-relaxed">Join our channel for new releases, changelogs, and announcements — the fastest way to know when a new version drops.</p>
+            </div>
+            <a
+              href="https://t.me/spotiflacapp"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold bg-[#229ED9] text-white hover:bg-[#1a8bc4] transition-all duration-200 shadow-lg hover:shadow-[#229ED9]/30 text-sm whitespace-nowrap"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+              </svg>
+              Join Channel
+            </a>
           </div>
 
           {/* Download cards */}
@@ -125,29 +149,7 @@ export default function DownloadPage() {
             ))}
           </div>
 
-          {/* Telegram CTA — immediately after download links */}
-          <div className="mb-8 p-6 rounded-2xl border border-[#229ED9]/30 bg-[#229ED9]/8 flex flex-col sm:flex-row items-center gap-5">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#229ED9] flex items-center justify-center">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-              </svg>
-            </div>
-            <div className="flex-1 text-center sm:text-left">
-              <p className="font-bold text-[var(--text)] mb-1" style={{fontFamily:'var(--font-display)'}}>Get updates on Telegram</p>
-              <p className="text-sm text-[var(--muted)] leading-relaxed">Join our channel for new releases, changelogs, and announcements — the fastest way to know when a new version drops.</p>
-            </div>
-            <a
-              href="https://t.me/spotiflacapp"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold bg-[#229ED9] text-white hover:bg-[#1a8bc4] transition-all duration-200 shadow-lg hover:shadow-[#229ED9]/30 text-sm whitespace-nowrap"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-              </svg>
-              Join Channel
-            </a>
-          </div>
+
 
           {/* Source repo — single GitHub mention on this page */}
           <div className="glass rounded-2xl p-6 mb-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -169,6 +171,46 @@ export default function DownloadPage() {
               View Repository
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M2 10L10 2M10 2H4M10 2v6"/></svg>
             </a>
+          </div>
+
+          {/* PC Downloads */}
+          <div className="glass rounded-2xl p-6 mb-10">
+            <h2 className="text-lg font-bold text-[var(--text)] mb-2" style={{fontFamily:'var(--font-display)'}}>
+              SpotiFLAC for PC
+            </h2>
+            <p className="text-sm text-[var(--muted)] mb-5 leading-relaxed">
+              Available for Windows, macOS, and Linux. <a href="/pc" className="text-green-400 hover:text-green-300 underline underline-offset-2">Learn more about the PC version</a>.
+            </p>
+            <div className="space-y-3">
+              {[
+                { label: 'Windows', sub: 'Windows 10 / 11 · 64-bit', badge: '.exe', href: 'https://github.com/spotbye/SpotiFLAC/releases/download/v7.1.6/SpotiFLAC.exe', primary: true },
+                { label: 'macOS', sub: 'macOS 11 Big Sur and above', badge: '.dmg', href: 'https://github.com/spotbye/SpotiFLAC/releases/download/v7.1.6/SpotiFLAC.dmg', primary: false },
+                { label: 'Linux (x64)', sub: 'AppImage · runs on most distros', badge: '.AppImage', href: 'https://github.com/spotbye/SpotiFLAC/releases/download/v7.1.6/SpotiFLAC.AppImage', primary: false },
+                { label: 'Linux (ARM)', sub: 'ARM64 AppImage · Raspberry Pi, etc.', badge: 'ARM .AppImage', href: 'https://github.com/spotbye/SpotiFLAC/releases/download/v7.1.6/SpotiFLAC-ARM.AppImage', primary: false },
+              ].map(r => (
+                <a
+                  key={r.label}
+                  href={r.href}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-200 group ${r.primary ? 'border-green-500/40 bg-green-500/10 hover:bg-green-500/15' : 'border-green-500/10 bg-green-500/[0.03] hover:bg-green-500/[0.07] hover:border-green-500/25'}`}
+                >
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 text-lg ${r.primary ? 'bg-green-500 text-black' : 'bg-green-500/15 text-green-400'}`}>
+                    {r.label === 'Windows' ? '🪟' : r.label === 'macOS' ? '🍎' : '🐧'}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-semibold text-sm text-[var(--text)]">{r.label}</span>
+                      <span className="text-xs px-2 py-0.5 rounded-full border border-green-500/25 text-green-400 bg-green-500/10">{r.badge}</span>
+                    </div>
+                    <p className="text-xs text-[var(--muted)] mt-0.5">{r.sub}</p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full border border-green-500/30 flex items-center justify-center text-green-400 group-hover:border-green-500 group-hover:bg-green-500/10 transition-all duration-200 flex-shrink-0">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-7 4h14v-2H5v2z"/></svg>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Install guides */}

@@ -4,20 +4,20 @@ import FAQ from '@/components/FAQ'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'SpotiFLAC Mobile APK v4.5.1 – Lossless Music Downloader',
+    absolute: 'SpotiFLAC Mobile APK v4.5.5 – Lossless Music Downloader',
   },
-  description: 'Download SpotiFLAC Mobile APK v4.5.1 for high-fidelity 24-bit FLAC audio. The ultimate lossless music downloader and player for mobile devices.',
+  description: 'Download SpotiFLAC Mobile APK v4.5.5 for high-fidelity 24-bit FLAC audio. The ultimate lossless music downloader and player for mobile devices.',
   alternates: { canonical: 'https://spotiflac.app' },
   openGraph: {
     url: 'https://spotiflac.app',
     title: 'SpotiFLAC Mobile APK — Free Lossless Music Downloader (24-bit FLAC)',
-    description: 'Download SpotiFLAC Mobile APK v4.5.1 for high-fidelity 24-bit FLAC audio. Free, open-source, no account required. Android 7.0+ & iOS 14+.',
+    description: 'Download SpotiFLAC Mobile APK v4.5.5 for high-fidelity 24-bit FLAC audio. Free, open-source, no account required. Android 7.0+ & iOS 14+.',
     images: [{ url: 'https://spotiflac.app/og-image.png', width: 1200, height: 630, alt: 'SpotiFLAC Mobile APK' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SpotiFLAC Mobile APK v4.5.1 – Lossless Music Downloader (24-bit Audio)',
-    description: 'Download SpotiFLAC Mobile APK v4.5.1 for high-fidelity 24-bit FLAC audio. Free, open-source, Android & iOS.',
+    title: 'SpotiFLAC Mobile APK v4.5.5 – Lossless Music Downloader (24-bit Audio)',
+    description: 'Download SpotiFLAC Mobile APK v4.5.5 for high-fidelity 24-bit FLAC audio. Free, open-source, Android & iOS.',
     images: ['https://spotiflac.app/og-image.png'],
   },
 }
@@ -100,8 +100,8 @@ const schemaApp = {
   operatingSystem: 'Android 7.0+, iOS 14+',
   applicationCategory: 'MultimediaApplication',
   applicationSubCategory: 'Music Downloader',
-  softwareVersion: '4.5.1',
-  datePublished: '2026-05-09',
+  softwareVersion: '4.5.5',
+  datePublished: '2026-05-18',
   description: 'Free lossless music downloader for Android and iOS. Downloads 24-bit FLAC audio with embedded metadata. No account required.',
   featureList: 'Lossless FLAC download, 24-bit audio support, MP3 320kbps, AAC 256kbps, batch playlist download, automatic metadata tagging, offline playback, no account required',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -173,7 +173,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/20 bg-green-500/5 text-green-400 text-xs font-semibold tracking-wider uppercase mb-8 animate-fade-up">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            v4.5.1 — Latest Release
+            v4.5.5 — Latest Release
           </div>
 
           <h1 className="animate-fade-up stagger-1 text-5xl md:text-7xl font-bold text-[var(--text)] mb-6 leading-tight" style={{textShadow:'0 0 60px rgba(34,197,94,0.25)'}}>
@@ -195,7 +195,7 @@ export default function HomePage() {
           </div>
 
           <p className="animate-fade-up stagger-4 mt-5 text-xs text-[var(--muted)]">
-            Android 7.0+ · iOS 14+ · v4.5.1 · MIT Licensed · No Account Needed
+            Android 7.0+ · iOS 14+ · v4.5.5 · MIT Licensed · No Account Needed
           </p>
         </div>
 
@@ -213,7 +213,7 @@ export default function HomePage() {
             { v: 'FLAC', l: 'Output Format' },
             { v: 'Free', l: 'Always & Forever' },
             { v: '9+', l: 'Key Features' },
-            { v: 'v4.5.1', l: 'Latest Version' },
+            { v: 'v4.5.5', l: 'Latest Version' },
           ].map(s => (
             <div key={s.l}>
               <div className="text-2xl md:text-3xl font-bold text-green-400 mb-1" style={{fontFamily:'var(--font-display)'}}>{s.v}</div>
@@ -232,8 +232,8 @@ export default function HomePage() {
               <tbody>
                 {[
                   { label: 'App Name',    value: 'SpotiFLAC Mobile' },
-                  { label: 'Version',     value: 'v4.5.1' },
-                  { label: 'Last Updated', value: '9 May, 2026' },
+                  { label: 'Version',     value: 'v4.5.5' },
+                  { label: 'Last Updated', value: '18 May, 2026' },
                   { label: 'File Size',   value: 'ARM64: 75.8 MB · ARM32: 95.4 MB · iOS: 33.2 MB' },
                   { label: 'Category',    value: 'Music & Audio' },
                   { label: 'Requirement', value: 'Android 7.0+ · iOS 14+' },

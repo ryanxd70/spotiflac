@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div className="space-y-3">
               {[
                 { label: 'License', value: 'MIT (Open Source)' },
-                { label: 'Current Version', value: 'v4.5.1' },
+                { label: 'Current Version', value: 'v4.5.5' },
                 { label: 'Platforms', value: 'Android 7.0+ · iOS 14+' },
                 { label: 'Website', value: 'spotiflac.app' },
                 { label: 'Affiliation', value: 'None — independent project' },

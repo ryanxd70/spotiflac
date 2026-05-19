@@ -11,6 +11,7 @@ const links = [
   { href: '/#how-it-works', label: 'How It Works', section: true },
   { href: '/#faq',        label: 'FAQ',         section: true  },
   { href: '/download',    label: 'Download',    section: false },
+  { href: '/pc',          label: 'For PC',      section: false },
   { href: '/about',       label: 'About',       section: false },
 ]
 
