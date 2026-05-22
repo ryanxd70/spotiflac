@@ -42,15 +42,15 @@ const steps = [
 ]
 
 const faqItems = [
-  { q: 'Is SpotiFLAC Mobile completely free?', a: 'Yes. SpotiFLAC Mobile is free with no paid tiers, no premium features, and no subscription. The entire project is open-source under the MIT license. You can inspect the source code on GitHub anytime.' },
+  { q: 'Is SpotiFLAC Mobile completely free?', a: 'Yes. It is free with no paid tiers, no premium features, and no subscription. The entire project is open-source under the MIT license. You can inspect the source code on GitHub anytime.' },
   { q: 'Do I need a Spotify or Apple Music account to use it?', a: 'No account of any kind is required. You simply paste a publicly accessible track or playlist URL into the app. No login, no OAuth, no streaming credentials.' },
-  { q: 'Which Android and iOS versions are supported?', a: 'SpotiFLAC Mobile requires Android 7.0 (Nougat) or higher for the APK. On iOS, you need iOS 14 or later. The app runs on both phones and tablets.' },
-  { q: 'Are downloads actually lossless FLAC, or is it re-encoded?', a: 'SpotiFLAC fetches tracks at the highest available quality from the source and writes them to FLAC without additional compression cycles where possible. Output fidelity is capped at whatever quality the source exposes — typically 16-bit/44.1kHz CD quality.' },
+  { q: 'Which Android and iOS versions are supported?', a: 'The app requires Android 7.0 (Nougat) or higher for the APK. On iOS, you need iOS 14 or later. It runs on both phones and tablets.' },
+  { q: 'Are downloads actually lossless FLAC, or is it re-encoded?', a: 'It fetches tracks at the highest available quality from the source and writes them to FLAC without additional compression cycles where possible. Output fidelity is capped at whatever quality the source exposes — typically 16-bit/44.1kHz CD quality.' },
   { q: 'Is installing the APK safe?', a: 'Only download from spotiflac.app. Never install APKs from third-party mirrors. After installing, you can re-disable "Install from Unknown Sources" in Android settings immediately.' },
   { q: 'Can I download full playlists and albums at once?', a: 'Yes. Paste any playlist or album URL and every track is queued automatically. Batch downloads process sequentially in the background with no need to keep the app open.' },
   { q: 'What music players can play the downloaded files?', a: 'Standard FLAC and MP3 files work with any player: VLC, PowerAMP, Neutron, Apple Music, foobar2000, Plex, and more. There is no proprietary format or DRM — the files are yours to use anywhere.' },
   { q: 'Does SpotiFLAC collect any personal data?', a: 'None whatsoever. The app contains no analytics SDK, no crash reporter, no telemetry, and no tracking of any kind. All operations happen locally on your device. See our Privacy Policy for the full details.' },
-  { q: 'Why is it not on the Google Play Store or Apple App Store?', a: 'Apps that facilitate downloading copyrighted content from streaming services are not permitted on official app stores per their developer policies. SpotiFLAC is therefore distributed as a direct APK (Android) and sideloadable IPA (iOS).' },
+  { q: 'Why is it not on the Google Play Store or Apple App Store?', a: 'Apps that facilitate downloading copyrighted content from streaming services are not permitted on official app stores per their developer policies. It is therefore distributed as a direct APK (Android) and sideloadable IPA (iOS).' },
   { q: 'Is using SpotiFLAC Mobile legal?', a: 'Legality depends entirely on your local copyright law and what you download. SpotiFLAC is a tool — your use of it is your responsibility. Only download music you have the right to access. See our Disclaimer page for full details.' },
   { q: 'How do I update to a new version?', a: 'Download the latest APK from spotiflac.app and install it directly over the existing version. Your download history and settings carry over automatically.' },
   { q: 'A download failed. What should I do?', a: 'Check your internet connection, confirm the URL is valid and publicly accessible, then use the Retry button in the Download History screen. If the issue persists across multiple tracks, try a different URL to determine whether it is a source-specific problem.' },
@@ -238,7 +238,7 @@ export default function HomePage() {
                   { label: 'Category',    value: 'Music & Audio' },
                   { label: 'Requirement', value: 'Android 7.0+ · iOS 14+' },
                   { label: 'Downloads',   value: '200,000+' },
-                  { label: 'Developer',   value: 'SpotiFLAC (Open Source)' },
+                  { label: 'Developer',   value: 'Zarz Eleutherius (Open Source)' },
                   { label: 'Price',       value: 'Free' },
                 ].map((r, i) => (
                   <tr key={r.label} className={i % 2 === 0 ? 'bg-green-500/[0.03]' : ''}>
@@ -255,11 +255,11 @@ export default function HomePage() {
       {/* ═══ INTRO ═══ */}
       <section className="max-w-3xl mx-auto px-6 py-20">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text)] mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center">
             What is SpotiFLAC Mobile APK
           </h2>
           <p className="text-[var(--muted)] mb-4 leading-relaxed">
-            Streaming apps let you listen, but you never truly own what you hear. SpotiFLAC Mobile changes that. It is a native Android and iOS app that downloads music and saves it as proper audio files — FLAC, MP3, or AAC — directly to your device storage.
+            Streaming apps let you listen, but you never truly own what you hear. This app changes that. It downloads music and saves it as proper audio files — FLAC, MP3, or AAC — directly to your device storage, no strings attached.
           </p>
           <p className="text-[var(--muted)] leading-relaxed">
             No subscriptions, no cloud, no DRM. Once downloaded, the files are standard audio files you can play anywhere, copy to any device, and keep forever. Built for audiophiles, offline listeners, and anyone tired of losing access to their library.
@@ -270,10 +270,10 @@ export default function HomePage() {
       {/* ═══ WHO IT'S FOR ═══ */}
       <section className="py-16 px-6 border-y border-green-500/10 bg-green-500/[0.02]">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-[var(--text)] mb-12">Who Should Use SpotiFLAC Mobile</h2>
+          <h2 className="text-3xl font-bold text-center text-[var(--text)] mb-12">Who Is It For</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: '🎧', title: 'Audiophiles', desc: 'If you can tell the difference between 128kbps and lossless, or you listen on quality headphones or a DAC, SpotiFLAC gives you files that match your standards.' },
+              { icon: '🎧', title: 'Audiophiles', desc: 'If you can tell the difference between 128kbps and lossless, or you listen on quality headphones or a DAC, you get files that actually match your standards.' },
               { icon: '✈️', title: 'Offline Listeners', desc: 'Commutes, flights, travel, remote areas — your full library plays without an internet connection, a data plan, or a streaming server staying online.' },
               { icon: '📚', title: 'Music Collectors', desc: 'Build a properly organized local library with real files, embedded metadata, cover art, and folder structures you control completely.' },
             ].map(c => (
@@ -329,10 +329,10 @@ export default function HomePage() {
       <section id="features" className="py-20 px-6 border-y border-green-500/10 bg-green-500/[0.02] scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-[var(--text)] mb-4">
-            Features of SpotiFLAC App
+            Features
           </h2>
           <p className="text-center text-[var(--muted)] mb-14 max-w-xl mx-auto leading-relaxed">
-            Every feature exists for a real reason. No bloat, no paywalled extras — just a focused tool that does one thing well.
+            Every feature exists for a real reason. No bloat, no paywalled extras.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map((f, i) => (
@@ -353,13 +353,13 @@ export default function HomePage() {
       {/* ═══ WHY USE IT ═══ */}
       <section className="py-16 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-[var(--text)] mb-12">Why Use SpotiFLAC Over Other Apps</h2>
+          <h2 className="text-3xl font-bold text-center text-[var(--text)] mb-12">Why Use It</h2>
           <div className="grid md:grid-cols-2 gap-5">
             {[
               { t: 'You keep the files permanently', d: 'Downloads live on your device with no expiry date. Delete the app, reformat your phone, change countries — the music stays.' },
               { t: 'Works with any music player', d: 'Standard FLAC and MP3 files play in VLC, PowerAMP, Apple Music, foobar2000, Neutron, Plex, and anything else you prefer.' },
               { t: 'Saves data over time', d: 'Download once on Wi-Fi and stream nothing afterward. Ideal for mobile data plans and anyone with limited connectivity.' },
-              { t: 'No recurring cost ever', d: 'Free to download, free to use, no subscription tier. The entire codebase is MIT-licensed and available on GitHub.' },
+              { t: 'No recurring cost ever', d: 'Completely free with no subscription tier. The codebase is MIT-licensed and open to anyone.' },
             ].map(item => (
               <div key={item.t} className="flex gap-4 p-5 rounded-xl border border-green-500/10 hover:border-green-500/25 hover:bg-green-500/5 transition-all duration-200">
                 <div className="flex-shrink-0 w-7 h-7 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
@@ -407,7 +407,7 @@ export default function HomePage() {
               { t: 'Download the APK', d: 'Tap the Download APK button on this page. Choose the ARM64 build for most modern phones, or ARM32 for older devices. The file saves to your Downloads folder.' },
               { t: 'Open the file', d: 'Use your file manager (Files by Google works well) to locate the downloaded APK and tap it to begin the install prompt.' },
               { t: 'Confirm Installation', d: 'Android will display app permissions and ask you to confirm. Tap Install and wait a few seconds for it to complete.' },
-              { t: 'Launch SpotiFLAC', d: 'Open SpotiFLAC from your home screen or app drawer. Paste any music link and tap Download to get your first track.' },
+              { t: 'Launch the App', d: 'Open the app from your home screen or app drawer. Paste any music link and tap Download to get your first track.' },
             ].map((s, i) => (
               <li key={i} className="flex gap-5 p-5 rounded-xl border border-green-500/10 hover:border-green-500/20 transition-colors">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-black font-bold text-sm">{i + 1}</div>
